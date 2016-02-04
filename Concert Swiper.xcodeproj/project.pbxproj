@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2844E7C71C60302000F2EF4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7C61C60302000F2EF4A /* AppDelegate.swift */; };
+		2844E7C91C60302000F2EF4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7C81C60302000F2EF4A /* ViewController.swift */; };
+		2844E7CC1C60302000F2EF4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7CA1C60302000F2EF4A /* Main.storyboard */; };
+		2844E7CE1C60302000F2EF4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7CD1C60302000F2EF4A /* Assets.xcassets */; };
+		2844E7D11C60302000F2EF4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7CF1C60302000F2EF4A /* LaunchScreen.storyboard */; };
+		2844E7D91C6031FE00F2EF4A /* SignInWithFacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7D81C6031FE00F2EF4A /* SignInWithFacebook.png */; };
+		2844E7DB1C608BB300F2EF4A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7DA1C608BB300F2EF4A /* SignUpViewController.swift */; };
+		2844E7DD1C628E9C00F2EF4A /* Adele.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7DC1C628E9C00F2EF4A /* Adele.jpeg */; };
+		2844E7E11C62930600F2EF4A /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7E01C62930600F2EF4A /* SwipeViewController.swift */; };
+		2844E7E31C62932A00F2EF4A /* MatchesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7E21C62932A00F2EF4A /* MatchesCollectionViewController.swift */; };
+		2844E7E91C62BEC200F2EF4A /* EventImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7E81C62BEC200F2EF4A /* EventImageCollectionViewCell.swift */; };
+		2844E7EB1C62BF0D00F2EF4A /* EventLocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7EA1C62BF0D00F2EF4A /* EventLocationCollectionViewCell.swift */; };
+		2844E7ED1C62BF3600F2EF4A /* EventTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7EC1C62BF3600F2EF4A /* EventTimeCollectionViewCell.swift */; };
+		2844E7F41C62E2B700F2EF4A /* Beatles.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7F01C62E2B700F2EF4A /* Beatles.jpeg */; };
+		2844E7F51C62E2B700F2EF4A /* JCole.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7F11C62E2B700F2EF4A /* JCole.jpg */; };
+		2844E7F61C62E2B700F2EF4A /* MichaelJackson.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7F21C62E2B700F2EF4A /* MichaelJackson.jpeg */; };
+		2844E7F71C62E2B700F2EF4A /* Rihanna.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7F31C62E2B700F2EF4A /* Rihanna.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2844E7C31C60302000F2EF4A /* Concert Swiper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Concert Swiper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2844E7C61C60302000F2EF4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2844E7C81C60302000F2EF4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2844E7CB1C60302000F2EF4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2844E7CD1C60302000F2EF4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2844E7D01C60302000F2EF4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2844E7D21C60302000F2EF4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2844E7D81C6031FE00F2EF4A /* SignInWithFacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignInWithFacebook.png; sourceTree = "<group>"; };
+		2844E7DA1C608BB300F2EF4A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2844E7DC1C628E9C00F2EF4A /* Adele.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Adele.jpeg; sourceTree = "<group>"; };
+		2844E7E01C62930600F2EF4A /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		2844E7E21C62932A00F2EF4A /* MatchesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesCollectionViewController.swift; sourceTree = "<group>"; };
+		2844E7E81C62BEC200F2EF4A /* EventImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventImageCollectionViewCell.swift; path = ../EventImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		2844E7EA1C62BF0D00F2EF4A /* EventLocationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventLocationCollectionViewCell.swift; path = ../EventLocationCollectionViewCell.swift; sourceTree = "<group>"; };
+		2844E7EC1C62BF3600F2EF4A /* EventTimeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		2844E7F01C62E2B700F2EF4A /* Beatles.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Beatles.jpeg; sourceTree = "<group>"; };
+		2844E7F11C62E2B700F2EF4A /* JCole.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = JCole.jpg; sourceTree = "<group>"; };
+		2844E7F21C62E2B700F2EF4A /* MichaelJackson.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MichaelJackson.jpeg; sourceTree = "<group>"; };
+		2844E7F31C62E2B700F2EF4A /* Rihanna.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Rihanna.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2844E7C01C60302000F2EF4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2844E7BA1C60302000F2EF4A = {
+			isa = PBXGroup;
+			children = (
+				2844E7C51C60302000F2EF4A /* Concert Swiper */,
+				2844E7C41C60302000F2EF4A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2844E7C41C60302000F2EF4A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2844E7C31C60302000F2EF4A /* Concert Swiper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2844E7C51C60302000F2EF4A /* Concert Swiper */ = {
+			isa = PBXGroup;
+			children = (
+				2844E7F81C62E2BF00F2EF4A /* Images */,
+				2844E7EC1C62BF3600F2EF4A /* EventTimeCollectionViewCell.swift */,
+				2844E7EA1C62BF0D00F2EF4A /* EventLocationCollectionViewCell.swift */,
+				2844E7E81C62BEC200F2EF4A /* EventImageCollectionViewCell.swift */,
+				2844E7C61C60302000F2EF4A /* AppDelegate.swift */,
+				2844E7C81C60302000F2EF4A /* ViewController.swift */,
+				2844E7CA1C60302000F2EF4A /* Main.storyboard */,
+				2844E7CD1C60302000F2EF4A /* Assets.xcassets */,
+				2844E7CF1C60302000F2EF4A /* LaunchScreen.storyboard */,
+				2844E7D81C6031FE00F2EF4A /* SignInWithFacebook.png */,
+				2844E7D21C60302000F2EF4A /* Info.plist */,
+				2844E7DA1C608BB300F2EF4A /* SignUpViewController.swift */,
+				2844E7E01C62930600F2EF4A /* SwipeViewController.swift */,
+				2844E7E21C62932A00F2EF4A /* MatchesCollectionViewController.swift */,
+			);
+			path = "Concert Swiper";
+			sourceTree = "<group>";
+		};
+		2844E7F81C62E2BF00F2EF4A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2844E7F01C62E2B700F2EF4A /* Beatles.jpeg */,
+				2844E7F11C62E2B700F2EF4A /* JCole.jpg */,
+				2844E7F21C62E2B700F2EF4A /* MichaelJackson.jpeg */,
+				2844E7F31C62E2B700F2EF4A /* Rihanna.jpg */,
+				2844E7DC1C628E9C00F2EF4A /* Adele.jpeg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2844E7C21C60302000F2EF4A /* Concert Swiper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2844E7D51C60302000F2EF4A /* Build configuration list for PBXNativeTarget "Concert Swiper" */;
+			buildPhases = (
+				2844E7BF1C60302000F2EF4A /* Sources */,
+				2844E7C01C60302000F2EF4A /* Frameworks */,
+				2844E7C11C60302000F2EF4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Concert Swiper";
+			productName = "Concert Swiper";
+			productReference = 2844E7C31C60302000F2EF4A /* Concert Swiper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2844E7BB1C60302000F2EF4A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Arthur Yu";
+				TargetAttributes = {
+					2844E7C21C60302000F2EF4A = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 2844E7BE1C60302000F2EF4A /* Build configuration list for PBXProject "Concert Swiper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2844E7BA1C60302000F2EF4A;
+			productRefGroup = 2844E7C41C60302000F2EF4A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2844E7C21C60302000F2EF4A /* Concert Swiper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2844E7C11C60302000F2EF4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2844E7D11C60302000F2EF4A /* LaunchScreen.storyboard in Resources */,
+				2844E7CE1C60302000F2EF4A /* Assets.xcassets in Resources */,
+				2844E7F41C62E2B700F2EF4A /* Beatles.jpeg in Resources */,
+				2844E7F61C62E2B700F2EF4A /* MichaelJackson.jpeg in Resources */,
+				2844E7CC1C60302000F2EF4A /* Main.storyboard in Resources */,
+				2844E7F51C62E2B700F2EF4A /* JCole.jpg in Resources */,
+				2844E7D91C6031FE00F2EF4A /* SignInWithFacebook.png in Resources */,
+				2844E7F71C62E2B700F2EF4A /* Rihanna.jpg in Resources */,
+				2844E7DD1C628E9C00F2EF4A /* Adele.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2844E7BF1C60302000F2EF4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2844E7DB1C608BB300F2EF4A /* SignUpViewController.swift in Sources */,
+				2844E7E91C62BEC200F2EF4A /* EventImageCollectionViewCell.swift in Sources */,
+				2844E7E31C62932A00F2EF4A /* MatchesCollectionViewController.swift in Sources */,
+				2844E7C91C60302000F2EF4A /* ViewController.swift in Sources */,
+				2844E7ED1C62BF3600F2EF4A /* EventTimeCollectionViewCell.swift in Sources */,
+				2844E7C71C60302000F2EF4A /* AppDelegate.swift in Sources */,
+				2844E7E11C62930600F2EF4A /* SwipeViewController.swift in Sources */,
+				2844E7EB1C62BF0D00F2EF4A /* EventLocationCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2844E7CA1C60302000F2EF4A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2844E7CB1C60302000F2EF4A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2844E7CF1C60302000F2EF4A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2844E7D01C60302000F2EF4A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2844E7D31C60302000F2EF4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2844E7D41C60302000F2EF4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2844E7D61C60302000F2EF4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Concert Swiper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthuryu.Concert-Swiper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2844E7D71C60302000F2EF4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Concert Swiper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthuryu.Concert-Swiper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2844E7BE1C60302000F2EF4A /* Build configuration list for PBXProject "Concert Swiper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2844E7D31C60302000F2EF4A /* Debug */,
+				2844E7D41C60302000F2EF4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2844E7D51C60302000F2EF4A /* Build configuration list for PBXNativeTarget "Concert Swiper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2844E7D61C60302000F2EF4A /* Debug */,
+				2844E7D71C60302000F2EF4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2844E7BB1C60302000F2EF4A /* Project object */;
+}
