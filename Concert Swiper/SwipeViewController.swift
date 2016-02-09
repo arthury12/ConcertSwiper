@@ -9,6 +9,7 @@
 import UIKit
 
 class SwipeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    let googleURL = NSURL(string: "http://www.google.com/")
     @IBOutlet weak var collectionView: UICollectionView!
     
     let identifier = "CellIdentifier"
@@ -22,33 +23,78 @@ class SwipeViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 3
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: EventImageCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("EventImageCellID", forIndexPath: indexPath) as! EventImageCollectionViewCell
-//        let cell1: EventLocationCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("EventLocationCellID", forIndexPath: indexPath) as! EventLocationCollectionViewCell
-//        let cell2: EventTimeCollectionViewCell =
-//            collectionView.dequeueReusableCellWithReuseIdentifier("EventTimeCellID", forIndexPath: indexPath) as! EventImageCollectionViewCell
+    func wasDragged(gesture: UIPanGestureRecognizer){
         
-        cell.eventImage.image = UIImage(named: collectionImages[indexPath.row])
-        return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SegueToMatchesTableView" {
+            let viewController: MatchesCollectionViewController = segue.destinationViewController as! MatchesCollectionViewController
+            viewController.tableArray = collectionImages
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        
+        let gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
+        collectionView.addGestureRecognizer(gesture)
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "action", name: "imageSelected", object: nil)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    func action() {
+        collectionView.reloadData()
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        var eventTimeAndLocationIndex = 0
+        if indexPath.row == 0 {
+            let cell: EventImageCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("EventImageCellID", forIndexPath: indexPath) as! EventImageCollectionViewCell
+            cell.eventImage.image = UIImage(named: collectionImages[indexPath.row])
+            return cell
+        }
+        else if indexPath.row == 1 {
+            let cell: EventLocationAndTimeCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("EventLocationAndTimeCellID", forIndexPath: indexPath) as! EventLocationAndTimeCollectionViewCell
+            cell.eventLocation.text = collectionEventLocationData[eventTimeAndLocationIndex]
+            cell.eventTime.text = collectionTimeData[eventTimeAndLocationIndex]
+            eventTimeAndLocationIndex += 1
+            return cell
+        }
+        
+        return UICollectionViewCell.init()
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print("Selected \(indexPath.row)")
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        var size = CGSize()
+        if indexPath.row == 0 {
+            size = CGSize.init(width: 414, height: 253)
+        }
+        else if indexPath.row == 1 {
+            size = CGSize.init(width: 414, height: 150)
+        }
+        return size
+    }
 
     /*
     // MARK: - Navigation

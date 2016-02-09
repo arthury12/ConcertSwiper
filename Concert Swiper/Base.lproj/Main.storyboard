@@ -146,85 +146,13 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Matches"/>
                                                 <connections>
-                                                    <segue destination="Eed-S7-6Ha" kind="show" id="a8n-h5-wwm"/>
+                                                    <segue destination="Eed-S7-6Ha" kind="show" identifier="SegueToMatchesTableView" id="a8n-h5-wwm"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SE8-Qn-iNv" customClass="CollectionView" customModule="Concert_Swiper" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="163" width="414" height="450"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WXk-Va-aQ2">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventImageCellID" id="QU2-oc-lhv" userLabel="EventImageViewCell" customClass="EventImageCollectionViewCell" customModule="Concert_Swiper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="253"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="253"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Adele.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="P2M-ZP-dpr" customClass="E">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="253"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <size key="customSize" width="414" height="253"/>
-                                        <connections>
-                                            <outlet property="eventImage" destination="P2M-ZP-dpr" id="dE5-H8-Uzu"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventLocationCellID" id="ldT-tg-fQg" userLabel="EventLocationViewCell" customClass="EventLocationCollectionViewCell" customModule="Concert_Swiper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="263" width="414" height="63"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Concert location: Hollywood Bowl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK1-1G-HU2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="421" height="63"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <size key="customSize" width="414" height="63"/>
-                                        <connections>
-                                            <outlet property="eventLocation" destination="pK1-1G-HU2" id="93d-8B-ssT"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventTimeCellID" id="0Wv-Yr-GsC" userLabel="EventTimeViewCell" customClass="EventTimeCollectionViewCell" customModule="Concert_Swiper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="336" width="414" height="63"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Concert time: Sat. 2/6 8pm PST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spH-Sz-gI2" customClass="Even">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <size key="customSize" width="414" height="63"/>
-                                        <connections>
-                                            <outlet property="eventTime" destination="spH-Sz-gI2" id="woc-kA-bFJ"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5G-4R-oFf">
                                 <rect key="frame" x="0.0" y="670" width="414" height="66"/>
                                 <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -240,22 +168,106 @@
                                     <action selector="TMLink:" destination="ZWY-Bk-fbt" eventType="touchUpInside" id="D6P-Qb-x6B"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SE8-Qn-iNv">
+                                <rect key="frame" x="0.0" y="149" width="414" height="450"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="DIP-vS-GQM"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rzu-0W-bqw">
+                                    <size key="itemSize" width="414" height="253"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventImageCellID" id="QU2-oc-lhv" userLabel="EventImageViewCell" customClass="EventImageCollectionViewCell" customModule="Concert_Swiper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="253"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="253"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Adele.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="P2M-ZP-dpr" customClass="E">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="253"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="253" id="35w-oj-l9f"/>
+                                                        <constraint firstAttribute="width" constant="414" id="7US-x0-FgE"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="yv7-Y1-ikX" appends="YES" id="4n8-eH-6xv"/>
+                                                    </connections>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="414" height="253"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventLocationAndTimeCellID" id="ldT-tg-fQg" userLabel="EventTimeAndLocationViewCell" customClass="EventLocationAndTimeCollectionViewCell" customModule="Concert_Swiper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="263" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Event Location: Hollywood Bowl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK1-1G-HU2">
+                                                    <rect key="frame" x="0.0" y="17" width="414" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="421" id="wCu-7d-ug1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Time: Sat. 2/6 8pm PST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fo6-ts-sFm" customClass="SwipeView">
+                                                    <rect key="frame" x="0.0" y="100" width="414" height="63"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="414" id="GF6-py-2ph"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="414" height="200"/>
+                                        <connections>
+                                            <outlet property="eventLocation" destination="pK1-1G-HU2" id="fnH-SM-bEH"/>
+                                            <outlet property="eventTime" destination="fo6-ts-sFm" id="JU1-vt-TlI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="delegate" destination="ZWY-Bk-fbt" id="fAA-CZ-Y4g"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C5G-4R-oFf" firstAttribute="width" secondItem="BRN-AY-nUt" secondAttribute="width" id="r7H-bR-bah"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="collectionView" destination="SE8-Qn-iNv" id="gVL-mz-P1d"/>
+                        <outlet property="eventImageView" destination="P2M-ZP-dpr" id="dyj-6o-iBP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fO-BK-vZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yv7-Y1-ikX">
+                    <connections>
+                        <action selector="swipeRecognizer:" destination="ZWY-Bk-fbt" id="GGw-i8-Vvp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1277" y="599"/>
         </scene>
-        <!--View Controller-->
+        <!--Matches Collection View Controller-->
         <scene sceneID="yIg-U3-kCb">
             <objects>
-                <viewController id="Eed-S7-6Ha" sceneMemberID="viewController">
+                <viewController id="Eed-S7-6Ha" customClass="MatchesCollectionViewController" customModule="Concert_Swiper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1tP-5p-4Wg"/>
                         <viewControllerLayoutGuide type="bottom" id="Nfj-Jf-Tto"/>
@@ -284,11 +296,28 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bVU-go-FeZ">
                                 <rect key="frame" x="0.0" y="65" width="414" height="671"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCell" id="Wmp-We-9mY">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wmp-We-9mY" id="Teg-7U-GWP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Eed-S7-6Ha" id="gEH-B3-HKb"/>
+                                    <outlet property="delegate" destination="Eed-S7-6Ha" id="BTO-KO-s6U"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="matchesTableView" destination="bVU-go-FeZ" id="47F-t0-drJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3M-7Q-LX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -300,7 +329,7 @@
         <image name="SignInWithFacebook.png" width="480" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EM0-u7-Iyi"/>
+        <segue reference="KtD-Sz-zOB"/>
         <segue reference="yTk-Oh-7ri"/>
     </inferredMetricsTieBreakers>
 </document>
