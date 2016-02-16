@@ -79,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				283292C41C6560180049E780 /* SwiperCollectionViewLayout.swift */,
+				287CB7651C6BCD960001DA2B /* customDataModel.swift */,
 				2844E7F81C62E2BF00F2EF4A /* Images */,
 				2844E7E81C62BEC200F2EF4A /* EventImageCollectionViewCell.swift */,
 				283292C61C65693D0049E780 /* EventLocationAndTimeCollectionViewCell.swift */,
@@ -192,6 +193,7 @@
 				2844E7C91C60302000F2EF4A /* ViewController.swift in Sources */,
 				2844E7C71C60302000F2EF4A /* AppDelegate.swift in Sources */,
 				2844E7E11C62930600F2EF4A /* SwipeViewController.swift in Sources */,
+				287CB7661C6BCD960001DA2B /* customDataModel.swift in Sources */,
 				283292C51C6560180049E780 /* SwiperCollectionViewLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
