@@ -15,14 +15,18 @@ class MatchesCollectionViewController: UIViewController, UITableViewDataSource, 
     
     let url = NSURL(string: "http://app.map.jash1.syseng.tmcs:8080/api/mapping/hp?domain=US&marketId=27")
     
+    let tableArrayDefaults = NSUserDefaults.standardUserDefaults()
     var tableArray: [String] = []
     
     var artist: Artist?
+    var artistDict = [String : String]()
+    var arrayAsData = NSData()
+    //var tableArrayDefaults = NSUserDefaults.standardUserDefaults()
     var matchesArray = [Artist]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadURL()
+
         // Do any additional setup after loading the view.
     }
     
@@ -40,70 +44,28 @@ class MatchesCollectionViewController: UIViewController, UITableViewDataSource, 
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TableCell", forIndexPath: indexPath) 
         
-        cell.textLabel?.text = matchesArray[indexPath.row].artistName
+        if let cell = tableView.dequeueReusableCellWithIdentifier("TableCell", forIndexPath: indexPath) as? MatchesCell {
+       
+        cell.artistName.text = matchesArray[indexPath.row].artistName
+        cell.artistName.font = cell.artistName.font.fontWithSize(13)
         
-        return cell
+        if let urlString = matchesArray[indexPath.row].artistImageUrl {
+            if let url = NSURL(string: urlString) {
+                if let imageData = NSData(contentsOfURL: url) {
+                    cell.imageView?.image = UIImage(data: imageData)
+                }
+            }
+        }
+        
+            return cell
+        }
+        
+        return UITableViewCell()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         NSNotificationCenter.defaultCenter().postNotificationName("imageSelected", object: self, userInfo: nil)
-    }
-
-    func loadURL() {
-        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-        var request = NSMutableURLRequest(URL: url!)
-        request.HTTPMethod = "GET"
-        let task = session.dataTaskWithRequest(request, completionHandler: { [unowned self] (data, response, error) -> Void in
-            if (error != nil){
-                print(error)
-            }
-            
-            do {
-                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-                
-                if let dict = json as? [String: AnyObject] {
-                    
-                    if let recommendations = dict["recommendations"] as? [String: AnyObject] {
-                        
-                        if let optional = recommendations["top"] as? [String: AnyObject] {
-                            
-                            if let recommendedArtists = optional["recommendedArtists"] as? [NSObject] {
-                                var index = 0
-                                for artist: NSObject in recommendedArtists {
-                                    
-                                    if let artistDict = artist as? [String: AnyObject] {
-                                        var currArtist = Artist()
-                                        if let artistObject = artistDict["artist"] as? [String: AnyObject] {
-                                            currArtist.artistId = artistObject["artistId"] as? Int
-                                            currArtist.artistImageUrl = artistObject["artistImageUrl"] as? String
-                                            currArtist.artistLinkId = artistObject["artistLinkId"] as? String
-                                            currArtist.artistName = artistObject["artistName"] as? String
-                                            currArtist.largeArtistImageUrl = artistObject["largeArtistImageUrl"] as? String
-                                            print (currArtist.artistImageUrl)
-                                            print (currArtist.artistLinkId)
-                                        }
-                                        self.arrayOfStruct.append(currArtist)
-                                    }
-                                    index++
-                                }
-                            }
-                        }
-                    }
-                }
-                
-            } catch {
-                print ("Error serializing JSON: \(error)")
-            }
-            
-            self.matchesTableView.reloadData()
-            
-            })
-        
-        task.resume()
-        
-        matchesTableView.reloadData()
     }
     
 //    func parseJSONIntoStruct(jsonDict: NSDictionary) -> Artist{

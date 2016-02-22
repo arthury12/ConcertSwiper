@@ -10,6 +10,21 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBAction func continueButton(sender: AnyObject) {
+        if let storyboard = self.storyboard {
+            if let swipeViewController = storyboard.instantiateViewControllerWithIdentifier("SwipeViewController") as? SwipeViewController {
+                self.presentViewController(swipeViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    @IBAction func backButton(sender: AnyObject) {
+        if let storyboard = self.storyboard {
+            if let signInFBViewController = storyboard.instantiateViewControllerWithIdentifier("signInFBviewController") as? signInFBviewController {
+                self.presentViewController(signInFBViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

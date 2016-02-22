@@ -8,13 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class signInFBviewController: UIViewController {
 
     @IBAction func SignIn(sender: AnyObject) {
-        performSegueWithIdentifier("showSigninScreen", sender: self)
+        if let storyboard = self.storyboard {
+            if let signUpViewController = storyboard.instantiateViewControllerWithIdentifier("signUpViewController") as? SignUpViewController {
+                self.presentViewController(signUpViewController, animated: true, completion: nil)
+            }
+        }
     }
     @IBAction func loginWithFacebook(sender: AnyObject) {
-            performSegueWithIdentifier("showSigninScreen", sender: self)
+        if let storyboard = self.storyboard {
+            if let signUpViewController = storyboard.instantiateViewControllerWithIdentifier("signUpViewController") as? SignUpViewController {
+                self.presentViewController(signUpViewController, animated: true, completion: nil)
+            }
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

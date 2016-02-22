@@ -9,27 +9,53 @@
 import UIKit
 
 class SwipeViewController: UIViewController {
-    let url = NSURL(string: "http://app.map.jash1.syseng.tmcs:8080/api/mapping/hp?domain=US&marketId=27")
     
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventTitleTime: UILabel!
     @IBOutlet weak var eventLocation: UILabel!
-    var artist: Artist?
-    var arrayOfStruct = [Artist]()
-    var storedEvents = [Artist]()
     
+    @IBAction func matchesButton(sender: AnyObject) {
+        if let storyboard = self.storyboard {
+            if let matchesViewController = storyboard.instantiateViewControllerWithIdentifier("ConcertMatches") as? MatchesCollectionViewController {
+                self.presentViewController(matchesViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    @IBAction func settingsButton(sender: AnyObject) {
+        if let storyboard = self.storyboard {
+            if let signUpViewController = storyboard.instantiateViewControllerWithIdentifier("signUpViewController") as? SignUpViewController {
+                self.presentViewController(signUpViewController, animated: true, completion: nil)
+            }
+        }
+    }
+
+    var artist: Artist?
+    var artistStructArray = [Artist]()
+    var storedEvents = [Artist]()
     let identifier = "CellIdentifier"
     var arrayIndex = 0
+    let arrayIndexDefault = NSUserDefaults.standardUserDefaults()
+    let url = NSURL(string: "http://app.map.jash1.syseng.tmcs:8080/api/mapping/hp?domain=US&marketId=27")
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "SegueToMatchesTableView" {
-            let viewController: MatchesCollectionViewController = segue.destinationViewController as! MatchesCollectionViewController
-            viewController.matchesArray = storedEvents
+    func structToArray (artistStructArray: [Artist]) -> [Dictionary<String, String>] {
+        var artistDict = [String : String]()
+        var artistDictArray = [artistDict]
+        for var i = 0; i < artistStructArray.count; i++ {
+            if artistStructArray[i].artistName != nil && artistStructArray[i].artistImageUrl != nil {
+                artistDict = ["Artist Name": artistStructArray[i].artistName!,
+                              "Artist Image URL": artistStructArray[i].artistImageUrl!]
+                artistDictArray.append(artistDict)
+            
+            }
         }
+        return artistDictArray
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        eventImage.
             
         let gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
         loadURL()
@@ -49,28 +75,30 @@ class SwipeViewController: UIViewController {
         var stretch = CGAffineTransformScale(rotation, scale, scale)
         image.transform = stretch
         
-        if gesture.state == UIGestureRecognizerState.Ended {
+        if gesture.state == UIGestureRecognizerState.Ended && artistStructArray.count > 0 {
             if image.center.x < 100 {
-                //print("not chosen")
-                arrayIndex++
-                //print(self.arrayOfStruct[arrayIndex].largeArtistImageUrl)
-                self.load_image(self.arrayOfStruct[arrayIndex].largeArtistImageUrl!)
-                self.load_artistName(self.arrayOfStruct[arrayIndex].artistName!)
+                if arrayIndex < artistStructArray.count {
+                    arrayIndex++
+                    self.load_image(self.artistStructArray[arrayIndex].largeArtistImageUrl!)
+                    self.load_artistName(self.artistStructArray[arrayIndex].artistName!)
+                }
             } else if image.center.x > self.view.bounds.width - 100 {
                 //print("chosen")
-                storedEvents.append(self.arrayOfStruct[arrayIndex])
-                arrayIndex++
-                self.load_image(self.arrayOfStruct[arrayIndex].largeArtistImageUrl!)
-                self.load_artistName(self.arrayOfStruct[arrayIndex].artistName!)
-                print("event stored \(self.arrayOfStruct[arrayIndex-1].artistName!)")
+                if arrayIndex+1 < artistStructArray.count {
+                    storedEvents.append(self.artistStructArray[arrayIndex])
+                    arrayIndex++
+                    self.load_image(self.artistStructArray[arrayIndex].largeArtistImageUrl!)
+                    self.load_artistName(self.artistStructArray[arrayIndex].artistName!)
+                }
+                print("event stored \(self.artistStructArray[arrayIndex-1].artistName!)")
             }
+            arrayIndexDefault.setInteger(arrayIndex, forKey: "userArrayIndex")
             
             rotation = CGAffineTransformMakeRotation(0)
             stretch = CGAffineTransformScale(rotation, 1, 1)
             image.transform = stretch
             image.center = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2 - 70)
         }
-        //print(translation)
     }
     
     func loadURL() {
@@ -91,6 +119,7 @@ class SwipeViewController: UIViewController {
                         
                         if let optional = recommendations["top"] as? [String: AnyObject] {
                             
+                            
                             if let recommendedArtists = optional["recommendedArtists"] as? [NSObject] {
                                 for artist: NSObject in recommendedArtists {
                                     
@@ -103,7 +132,7 @@ class SwipeViewController: UIViewController {
                                             currArtist.artistName = artistObject["artistName"] as? String
                                             currArtist.largeArtistImageUrl = artistObject["largeArtistImageUrl"] as? String
                                         }
-                                        self.arrayOfStruct.append(currArtist)
+                                        self.artistStructArray.append(currArtist)
                                     }
                                 }
                             }
@@ -114,9 +143,11 @@ class SwipeViewController: UIViewController {
             } catch {
                 print ("Error serializing JSON: \(error)")
             }
-            print(self.arrayOfStruct[self.arrayIndex].largeArtistImageUrl)
-            self.load_image(self.arrayOfStruct[self.arrayIndex].largeArtistImageUrl!)
-            self.load_artistName(self.arrayOfStruct[self.arrayIndex].artistName!)
+            print(self.artistStructArray.count)
+            if self.artistStructArray.count > 0 {
+                self.load_image(self.artistStructArray[self.arrayIndex].largeArtistImageUrl!)
+                self.load_artistName(self.artistStructArray[self.arrayIndex].artistName!)
+            }
         }
         
         task.resume()
@@ -140,17 +171,11 @@ class SwipeViewController: UIViewController {
     
     func load_artistName(artistNameString:String)
     {
-        self.eventTitleTime.text = self.arrayOfStruct[arrayIndex].artistName
+        self.eventTitleTime.text = self.artistStructArray[arrayIndex].artistName
     }
-    
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    func action() {
-        //collectionView.reloadData()
     }
     
     @IBAction func TMLink(sender: AnyObject) {
@@ -160,47 +185,6 @@ class SwipeViewController: UIViewController {
     }
     
     
-//    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-//    
-//    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 2
-//    }
-    
-//    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-//        var eventTimeAndLocationIndex = 0
-//        if indexPath.row == 0 {
-//            let cell: EventImageCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("EventImageCellID", forIndexPath: indexPath) as! EventImageCollectionViewCell
-//            cell.eventImage.image = UIImage(named: collectionImages[indexPath.row])
-//            return cell
-//        }
-//        else if indexPath.row == 1 {
-//            let cell: EventLocationAndTimeCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("EventLocationAndTimeCellID", forIndexPath: indexPath) as! EventLocationAndTimeCollectionViewCell
-//            cell.eventLocation.text = collectionEventLocationData[eventTimeAndLocationIndex]
-//            cell.eventTime.text = collectionTimeData[eventTimeAndLocationIndex]
-//            eventTimeAndLocationIndex += 1
-//            return cell
-//        }
-//        
-//        return UICollectionViewCell.init()
-//    }
-//    
-//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        print("Selected \(indexPath.row)")
-//    }
-//    
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        var size = CGSize()
-//        if indexPath.row == 0 {
-//            size = CGSize.init(width: 414, height: 253)
-//        }
-//        else if indexPath.row == 1 {
-//            size = CGSize.init(width: 414, height: 150)
-//        }
-//        return size
-//    }
-
     /*
     // MARK: - Navigation
 

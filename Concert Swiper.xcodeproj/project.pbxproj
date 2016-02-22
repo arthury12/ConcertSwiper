@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		283292C51C6560180049E780 /* SwiperCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283292C41C6560180049E780 /* SwiperCollectionViewLayout.swift */; };
 		283292C71C65693D0049E780 /* EventLocationAndTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283292C61C65693D0049E780 /* EventLocationAndTimeCollectionViewCell.swift */; };
+		2843B1F61C75565E00A5D325 /* MatchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843B1F51C75565E00A5D325 /* MatchesCell.swift */; };
 		2844E7C71C60302000F2EF4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7C61C60302000F2EF4A /* AppDelegate.swift */; };
-		2844E7C91C60302000F2EF4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7C81C60302000F2EF4A /* ViewController.swift */; };
+		2844E7C91C60302000F2EF4A /* signInFBviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7C81C60302000F2EF4A /* signInFBviewController.swift */; };
 		2844E7CC1C60302000F2EF4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7CA1C60302000F2EF4A /* Main.storyboard */; };
 		2844E7CE1C60302000F2EF4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7CD1C60302000F2EF4A /* Assets.xcassets */; };
 		2844E7D11C60302000F2EF4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7CF1C60302000F2EF4A /* LaunchScreen.storyboard */; };
@@ -19,19 +20,20 @@
 		2844E7DD1C628E9C00F2EF4A /* Adele.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7DC1C628E9C00F2EF4A /* Adele.jpeg */; };
 		2844E7E11C62930600F2EF4A /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7E01C62930600F2EF4A /* SwipeViewController.swift */; };
 		2844E7E31C62932A00F2EF4A /* MatchesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7E21C62932A00F2EF4A /* MatchesCollectionViewController.swift */; };
-		2844E7E91C62BEC200F2EF4A /* EventImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844E7E81C62BEC200F2EF4A /* EventImageCollectionViewCell.swift */; };
 		2844E7F41C62E2B700F2EF4A /* Beatles.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7F01C62E2B700F2EF4A /* Beatles.jpeg */; };
 		2844E7F51C62E2B700F2EF4A /* JCole.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7F11C62E2B700F2EF4A /* JCole.jpg */; };
 		2844E7F61C62E2B700F2EF4A /* MichaelJackson.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7F21C62E2B700F2EF4A /* MichaelJackson.jpeg */; };
 		2844E7F71C62E2B700F2EF4A /* Rihanna.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2844E7F31C62E2B700F2EF4A /* Rihanna.jpg */; };
+		287CB7661C6BCD960001DA2B /* customDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287CB7651C6BCD960001DA2B /* customDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		283292C41C6560180049E780 /* SwiperCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiperCollectionViewLayout.swift; sourceTree = "<group>"; };
 		283292C61C65693D0049E780 /* EventLocationAndTimeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocationAndTimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		2843B1F51C75565E00A5D325 /* MatchesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatchesCell.swift; path = ../MatchesCell.swift; sourceTree = "<group>"; };
 		2844E7C31C60302000F2EF4A /* Concert Swiper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Concert Swiper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2844E7C61C60302000F2EF4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2844E7C81C60302000F2EF4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2844E7C81C60302000F2EF4A /* signInFBviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInFBviewController.swift; sourceTree = "<group>"; };
 		2844E7CB1C60302000F2EF4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2844E7CD1C60302000F2EF4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2844E7D01C60302000F2EF4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,11 +43,11 @@
 		2844E7DC1C628E9C00F2EF4A /* Adele.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Adele.jpeg; sourceTree = "<group>"; };
 		2844E7E01C62930600F2EF4A /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		2844E7E21C62932A00F2EF4A /* MatchesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesCollectionViewController.swift; sourceTree = "<group>"; };
-		2844E7E81C62BEC200F2EF4A /* EventImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventImageCollectionViewCell.swift; path = ../EventImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2844E7F01C62E2B700F2EF4A /* Beatles.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Beatles.jpeg; sourceTree = "<group>"; };
 		2844E7F11C62E2B700F2EF4A /* JCole.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = JCole.jpg; sourceTree = "<group>"; };
 		2844E7F21C62E2B700F2EF4A /* MichaelJackson.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MichaelJackson.jpeg; sourceTree = "<group>"; };
 		2844E7F31C62E2B700F2EF4A /* Rihanna.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Rihanna.jpg; sourceTree = "<group>"; };
+		287CB7651C6BCD960001DA2B /* customDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customDataModel.swift; path = ../customDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,18 +80,18 @@
 		2844E7C51C60302000F2EF4A /* Concert Swiper */ = {
 			isa = PBXGroup;
 			children = (
+				2843B1F51C75565E00A5D325 /* MatchesCell.swift */,
 				283292C41C6560180049E780 /* SwiperCollectionViewLayout.swift */,
 				287CB7651C6BCD960001DA2B /* customDataModel.swift */,
-				2844E7F81C62E2BF00F2EF4A /* Images */,
-				2844E7E81C62BEC200F2EF4A /* EventImageCollectionViewCell.swift */,
 				283292C61C65693D0049E780 /* EventLocationAndTimeCollectionViewCell.swift */,
+				2844E7F81C62E2BF00F2EF4A /* Images */,
 				2844E7C61C60302000F2EF4A /* AppDelegate.swift */,
-				2844E7C81C60302000F2EF4A /* ViewController.swift */,
 				2844E7CA1C60302000F2EF4A /* Main.storyboard */,
 				2844E7CD1C60302000F2EF4A /* Assets.xcassets */,
 				2844E7CF1C60302000F2EF4A /* LaunchScreen.storyboard */,
 				2844E7D81C6031FE00F2EF4A /* SignInWithFacebook.png */,
 				2844E7D21C60302000F2EF4A /* Info.plist */,
+				2844E7C81C60302000F2EF4A /* signInFBviewController.swift */,
 				2844E7DA1C608BB300F2EF4A /* SignUpViewController.swift */,
 				2844E7E01C62930600F2EF4A /* SwipeViewController.swift */,
 				2844E7E21C62932A00F2EF4A /* MatchesCollectionViewController.swift */,
@@ -187,12 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2844E7DB1C608BB300F2EF4A /* SignUpViewController.swift in Sources */,
-				2844E7E91C62BEC200F2EF4A /* EventImageCollectionViewCell.swift in Sources */,
 				2844E7E31C62932A00F2EF4A /* MatchesCollectionViewController.swift in Sources */,
 				283292C71C65693D0049E780 /* EventLocationAndTimeCollectionViewCell.swift in Sources */,
-				2844E7C91C60302000F2EF4A /* ViewController.swift in Sources */,
+				2844E7C91C60302000F2EF4A /* signInFBviewController.swift in Sources */,
 				2844E7C71C60302000F2EF4A /* AppDelegate.swift in Sources */,
 				2844E7E11C62930600F2EF4A /* SwipeViewController.swift in Sources */,
+				2843B1F61C75565E00A5D325 /* MatchesCell.swift in Sources */,
 				287CB7661C6BCD960001DA2B /* customDataModel.swift in Sources */,
 				283292C51C6560180049E780 /* SwiperCollectionViewLayout.swift in Sources */,
 			);
