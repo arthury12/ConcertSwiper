@@ -7,13 +7,12 @@
 //
 
 import UIKit
+import SafariServices
 
 class MatchesCollectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSURLSessionDelegate {
     @IBOutlet weak var matchesTableView: UITableView!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
-    
-    let url = NSURL(string: "http://app.map.jash1.syseng.tmcs:8080/api/mapping/hp?domain=US&marketId=27")
     
     let tableArrayDefaults = NSUserDefaults.standardUserDefaults()
     var tableArray: [String] = []
@@ -43,40 +42,41 @@ class MatchesCollectionViewController: UIViewController, UITableViewDataSource, 
         return matchesArray.count
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        //TO DO: add slide to remove functionality
+//        if editingStyle == .Delete {
+//            deleteIndexPath = indexPath
+//            let artistToDelete =
+//        }
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         if let cell = tableView.dequeueReusableCellWithIdentifier("TableCell", forIndexPath: indexPath) as? MatchesCell {
        
-        cell.artistName.text = matchesArray[indexPath.row].artistName
-        cell.artistName.font = cell.artistName.font.fontWithSize(13)
+            cell.artistName.text = matchesArray[indexPath.row].artistName
+            cell.artistName.font = cell.artistName.font.fontWithSize(13)
         
-        if let urlString = matchesArray[indexPath.row].artistImageUrl {
-            if let url = NSURL(string: urlString) {
-                if let imageData = NSData(contentsOfURL: url) {
-                    cell.imageView?.image = UIImage(data: imageData)
+            if let urlString = matchesArray[indexPath.row].artistImageUrl {
+                if let url = NSURL(string: urlString) {
+                    if let imageData = NSData(contentsOfURL: url) {
+                        cell.imageView?.image = UIImage(data: imageData)
+                    }
                 }
             }
-        }
-        
             return cell
         }
-        
         return UITableViewCell()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        NSNotificationCenter.defaultCenter().postNotificationName("imageSelected", object: self, userInfo: nil)
+        //NSNotificationCenter.defaultCenter().postNotificationName("imageSelected", object: self, userInfo: nil)
+        if let currentEventTMLink = matchesArray[indexPath.row].artistLinkId {
+            if let url = NSURL(string: currentEventTMLink) {
+                let safariVC = SFSafariViewController(URL: url)
+                self.presentViewController(safariVC, animated: true, completion: nil)
+            }
+        }
     }
-    
-//    func parseJSONIntoStruct(jsonDict: NSDictionary) -> Artist{
-//        
-//        
-//        var artist = Artist(
-//        artistId: 1, artistImageUrl: "abc", artistLinkId: "test", artistName: "test", largeArtistImageUrl: NSURL(string: "test"), score: 5, strategy: "test")
-//        
-//        return artist
-//    }
-//    
 
     /*
     // MARK: - Navigation
